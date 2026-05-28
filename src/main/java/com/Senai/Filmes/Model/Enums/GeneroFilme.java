@@ -14,5 +14,6 @@ public enum GeneroFilme {
     ESPORTE,
     CULT,
     AVENTURA,
-    MUSICAL
+    MUSICA;
+
 }

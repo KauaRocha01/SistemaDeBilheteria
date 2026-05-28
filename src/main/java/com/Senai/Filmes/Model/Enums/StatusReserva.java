@@ -1,4 +1,4 @@
-package com.Senai.Filmes.Model;
+package com.Senai.Filmes.Model.Enums;
 
 public enum StatusReserva {
     ATIVA,
