@@ -1,6 +1,5 @@
 package com.Senai.Filmes.Model;
 
-import com.Senai.Filmes.Model.Enums.GeneroFilme;
 import com.Senai.Filmes.Model.Enums.StatusReserva;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -10,6 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -41,8 +41,5 @@ public class Reservas {
 
     @OneToMany(mappedBy = "reserva", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ReservaAssento> assentos = new ArrayList<>();
-
-
-
 
 }
