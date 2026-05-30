@@ -11,8 +11,8 @@ import java.util.UUID;
 @NoArgsConstructor
 @Entity
 @Table(name = "cReserva_Assento")
-
 public class ReservaAssento {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -20,10 +20,9 @@ public class ReservaAssento {
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "reserva_id")
-    private Reservas reservas;
+    private Reservas reserva;
 
     @ManyToOne
     @JoinColumn(name = "assento_id")
     private Assento assento;
-
 }
