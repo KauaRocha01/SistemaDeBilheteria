@@ -5,6 +5,6 @@ import java.util.UUID;
 public record SalaResponse(
         UUID id,
         String nome,
-        Integer totalAssentos
+        Integer assentosPorFileira
 ) {
 }
