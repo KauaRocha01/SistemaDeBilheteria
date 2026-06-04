@@ -74,6 +74,7 @@ public class SalaService {
         return assentos;
     }
 
+
     private SalaResponse toResponse(Sala sala) {
         return new SalaResponse(
                 sala.getId(),
