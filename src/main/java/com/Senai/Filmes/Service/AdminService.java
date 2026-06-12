@@ -1,4 +1,4 @@
 package com.Senai.Filmes.Service;
 
-public class AdminService 0{
+public class AdminService {
 }
