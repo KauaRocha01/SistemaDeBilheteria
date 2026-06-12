@@ -8,6 +8,7 @@ import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,12 +39,14 @@ public class FilmeController {
     }
 
     @PostMapping
+    @PreAuthorize("hasRole('ADMIM')")
     @Operation(summary = "Criar Filmes", description = "Cadastrar um novo filme")
     public ResponseEntity<FilmeResponse> criarFilme(@RequestBody FilmeRequest filmerequest){
         return new ResponseEntity<>(filmeService.cadastrarFilme(filmerequest), HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIM')")
     @Operation(summary = "Atualizar filme", description = "Atualiza os dados de um filme")
     public ResponseEntity<FilmeResponse> atualizar
             (@PathVariable UUID id, @RequestBody FilmeRequest filmeRequest){
@@ -53,6 +56,7 @@ public class FilmeController {
 
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIM')")
     @Operation(summary = "Deletar filme", description = "Remove um filme do sistema")
     public ResponseEntity<FilmeResponse> deletar(@PathVariable UUID id){
 
